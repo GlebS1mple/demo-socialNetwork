@@ -1,0 +1,13 @@
+.main {
+    margin-top: 20px;
+    height: 100%;
+}
+.heading {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    color: #203758;
+    margin-bottom: 1rem;
+}

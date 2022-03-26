@@ -1,0 +1,26 @@
+.main {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.area {
+    min-height: 3rem;
+    height: 100%;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid gray;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+.btn {
+    min-height: 3rem;
+    height: 100%;
+    border-radius: 1rem;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: white;
+}

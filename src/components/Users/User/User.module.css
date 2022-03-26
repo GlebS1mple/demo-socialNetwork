@@ -1,0 +1,68 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.user {
+    display: flex;
+    margin-bottom: 1rem;
+}
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+}
+.userphoto {
+    margin-bottom: 0.6rem;
+}
+.follow {
+    border-radius: 6px;
+    background-color: #878f9c;
+    padding: 0.5rem;
+    opacity: 0.7;
+    border: none;
+    color: white;
+    transition: background-color, padding 0.3s ease;
+    cursor: pointer;
+}
+.follow:hover {
+    transition: all 0.3s ease;
+    background-color: black;
+    padding: 0.7rem;
+    cursor: pointer;
+}
+.about {
+    display: flex;
+    border: 1px solid #878f9c;
+    border-radius: 0.5rem;
+    width: 100%;
+    min-width: 500px;
+    box-sizing: border-box;
+    padding: 0.7rem;
+    justify-content: space-between;
+}
+.firstblock {
+    color: #878f9c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.secondblock {
+    color: #878f9c;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: left;
+}
+.name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.userphoto {
+    width: 60px;
+    height: 60px;
+}

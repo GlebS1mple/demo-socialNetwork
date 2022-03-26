@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+.textarea {
+    margin-bottom: 1rem;
+    width: 100%;
+    min-width: 500px;
+    min-height: 80px;
+    resize: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.btn {
+    padding: 1rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+}

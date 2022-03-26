@@ -1,0 +1,22 @@
+.main {
+    height: 50px;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+.main::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #f1f2f6;
+}
+.img {
+    margin-right: 1rem;
+    margin-left: 1.5rem;
+}
