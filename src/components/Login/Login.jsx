@@ -1,5 +1,5 @@
 import React from "react";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm } from "redux-form";
 import { Input } from "../common/FormControls/FormControls";
 import { required, maxLengthThunk } from './../../utils/validators';
 import { connect } from 'react-redux';
@@ -10,13 +10,15 @@ import { createField } from './../common/FormControls/FormControls';
 
 let maxLengthThunk30 = maxLengthThunk(30);
 
-const LoginForm = ({ handleSubmit, error }) => {
+const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
     return (
         <form onSubmit={handleSubmit}>
             {createField("Email", "email", [required, maxLengthThunk30], Input)}
             {createField("Password", "password", [required, maxLengthThunk30], Input, { type: "password" })}
             {createField(null, "rememberMe", [], Input, { type: "checkbox" })}
-            remember me
+
+            {captchaUrl && <img src={captchaUrl} />}
+            {captchaUrl && createField("Symbols from image", "captcha", [required], Input, {})}
             {error && <div className={s.error}>
                 {error}
             </div>
@@ -32,7 +34,7 @@ const LoginFormForRedux = reduxForm({
 })(LoginForm)
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.logins(formData.email, formData.password, formData.rememberMe)
+        props.logins(formData.email, formData.password, formData.rememberMe, formData.captcha)
     }
     if (props.isAuth) {
         return <Navigate to="/Main/22528" />
@@ -40,11 +42,12 @@ const Login = (props) => {
     return (
         <div className="s">
             <h1>Login</h1>
-            <LoginFormForRedux onSubmit={onSubmit} />
+            <LoginFormForRedux onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
         </div>
     )
 }
 const mapStateToProps = (state) => ({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth
 })
 

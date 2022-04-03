@@ -29,6 +29,18 @@ export const mainAPI = {
     updateStatus(status) {
         return instance.put(`https://social-network.samuraijs.com/api/1.0/profile/status`, { status: status });//.then(response => { return response.data });
     },
+    savePhoto(photoFile) {
+        let formData = new FormData();
+        formData.append("image", photoFile);
+        return instance.put(`https://social-network.samuraijs.com/api/1.0/profile/photo`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });//.then(response => { return response.data });
+    },
+    saveMain(profile) {
+        return instance.put(`https://social-network.samuraijs.com/api/1.0/profile`, profile)
+    }//.then(response => { return response.data });
 };
 
 export const authAPI = {
@@ -36,13 +48,19 @@ export const authAPI = {
         return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`).then(response => { return response.data });
     },
 
-    login(email, password, rememberMe, isAuth) {
-        return instance.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, { email, password, rememberMe, isAuth }).then(response => { return response.data });
+    login(email, password, rememberMe, captcha = null) {
+        return instance.post(`https://social-network.samuraijs.com/api/1.0/auth/login`, { email, password, rememberMe, captcha });
     },
     logout() {
         return instance.delete(`https://social-network.samuraijs.com/api/1.0/auth/login`).then(response => { return response.data });
     },
 
+};
+
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get(`https://social-network.samuraijs.com/api/1.0/security/get-captcha-url`);
+    },
 };
 
 

@@ -55,3 +55,15 @@
     padding: 0;
     margin: 0px 0px 0px 0px;
 }
+.change {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    border: none;
+}
+.editbtn {
+    position: absolute;
+    top: 50px;
+    left: 15px;
+}

@@ -10,7 +10,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { initializeApp } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import store from './redux/redux-store';
 import { Provider } from 'react-redux';
 import {
@@ -26,8 +26,15 @@ const MainContainer = React.lazy(() => import('./components/Main/MainContainer')
 
 
 class App extends React.Component {
+  catchAllUnhandledError = (promiseRejectionEvent) => {
+    alert("Some error");
+  }
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledError)
+  }
+  componentWillUnmount() {
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledError)
   }
   render() {
     if (!this.props.initialized) {
@@ -39,11 +46,14 @@ class App extends React.Component {
         <div className="flex">
           <Sidebar />
           <Suspense fallback={<Preloader />}>
-            <Routes>
+            <Routes basename={process.env.PUBLIC_URL} >
               <Route path='/Messenger/*' element={<MessengerContainer />} />
               <Route path="/Main/:userId" element={<MainContainer />} />
+              <Route path="Main/" element={<MainContainer />} />
+              <Route index element={<MainContainer />} />
               <Route path='/Users/*' element={<UsersContainer />} />
               <Route path='/Login' element={<Login />} />
+              <Route path='*' element={<div>404 NOT FOUND</div>} />
             </Routes>
           </Suspense>
         </div>
@@ -75,11 +85,11 @@ let mapStateToProps = (state) => {
 let AppContainer = compose(connect(mapStateToProps, { initializeApp }), withRouter)(App);
 
 let MainApp = () => {
-  return <BrowserRouter>
+  return <HashRouter  >
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 }
 //store={store} dispatch={store.dispatch.bind(store)}
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "./Main";
-import { getUserProfile, getStatus, updateStatus } from './../../redux/main-reducer';
+import { getUserProfile, getStatus, updateStatus, savePhoto, saveMain } from './../../redux/main-reducer';
 import { connect } from 'react-redux';
 import {
     useLocation,
@@ -16,8 +16,7 @@ import { compose } from "redux";
 
 class MainContainer extends React.Component {
 
-    componentDidMount() {
-
+    refreshMain() {
         let userId = this.props.router.params.userId;
         if (!userId) {
             userId = this.props.authorizedUserId;
@@ -28,13 +27,23 @@ class MainContainer extends React.Component {
 
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
+    };
+
+    componentDidMount() {
+        this.refreshMain();
+
+    };
+
+    componentDidUpdate(prevProps) {
+        if (this.props.router.params.userId != prevProps.router.params.userId) {
+            this.refreshMain();
+        }
     }
 
 
     render() {
         return (
-
-            <Main contacts={this.props.contacts} posts={this.props.posts} events={this.props.events} walls={this.props.walls} whos={this.props.whos} {...this.props} status={this.props.status} updateStatus={this.props.updateStatus} />
+            <Main saveMain={this.props.saveMain} savePhoto={this.props.savePhoto} isOwner={!this.props.router.params.userId} contacts={this.props.contacts} posts={this.props.posts} events={this.props.events} walls={this.props.walls} whos={this.props.whos} {...this.props} status={this.props.status} updateStatus={this.props.updateStatus} />
         )
     }
 }
@@ -68,7 +77,7 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 export default compose(
-    connect(mapStateToProps, { getUserProfile, getStatus, updateStatus }),
+    connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveMain }),
     withRouter,
     WithAuthRedirect
 )(MainContainer);

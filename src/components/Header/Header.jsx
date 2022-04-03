@@ -8,7 +8,7 @@ const Header = (props) => {
 
             <div className={s.block}>
 
-                <img src="../img/logo.png" alt="" className={s.img} />
+                <img src="projects\01\my-app\public\img\logo.png" alt="" className={s.img} />
                 <nav className={s.nav}>
                     <ul className={s.list}>
                         <li className={s.li} ><NavLink to="/Main" className={s.link} >Home</NavLink></li>
