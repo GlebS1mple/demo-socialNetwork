@@ -2,7 +2,7 @@ import React from "react";
 import s from "../Post/Post.module.css";
 
 const Post = (props) => {
-    let src = "../img/Post" + props.srcimg;
+    let src = "https://glebs1mple.github.io/demo-socialNetwork/img/Post" + props.srcimg;
     return (
         <div className={s.main}>
             <div className={s.block}>
@@ -17,19 +17,19 @@ const Post = (props) => {
             </div>
             <div className={s.statblock}>
                 <div className={s.stat}>
-                    <img src="../img/like.png" alt="" className={s.icon} />
+                    <img src="https://glebs1mple.github.io/demo-socialNetwork/img/like.png" alt="" className={s.icon} />
                     <div className={s.nums}>
                         {props.likes}
                     </div>
                 </div>
                 <div className={s.stat}>
-                    <img src="../img/Comments.png" alt="" className={s.icon} />
+                    <img src="https://glebs1mple.github.io/demo-socialNetwork/img/Comments.png" alt="" className={s.icon} />
                     <div className={s.nums}>
                         {props.comments}
                     </div>
                 </div>
                 <div className={s.stat}>
-                    <img src="../img/share.png" alt="" className={s.icon} />
+                    <img src="https://glebs1mple.github.io/demo-socialNetwork/img/share.png" alt="" className={s.icon} />
                     <div className={s.nums}>
                         {props.shares}
                     </div>

@@ -61,6 +61,11 @@
     height: 30px;
     cursor: pointer;
 }
+.btn:hover {
+    color: #ffffff;
+    background-color: #5081c5;
+    transition: all 0.3s;
+}
 .text {
     display: flex;
     align-items: center;
@@ -78,4 +83,26 @@
 }
 .photos {
     margin-right: 9px;
+}
+@media (max-width: 400px) {
+    .main:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .bigimg {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 350px) {
+    .bigimg {
+        width: 180px;
+        height: 180px;
+    }
+    .flexblock {
+        top: 17px;
+    }
+    .btn {
+        height: 25px;
+    }
 }

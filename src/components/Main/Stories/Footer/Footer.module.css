@@ -4,8 +4,10 @@
     font-weight: normal;
     font-size: 11px;
     line-height: 20px;
-
-    /* Slate Grey */
-
     color: #788292;
+}
+@media (max-width: 800px) {
+    .main {
+        margin-left: 15px;
+    }
 }

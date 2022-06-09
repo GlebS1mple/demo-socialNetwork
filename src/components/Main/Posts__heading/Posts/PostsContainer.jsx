@@ -1,5 +1,5 @@
 import React from "react";
-import { updatePostActionCreator, addPostActionCreator } from "../../../../redux/main-reducer";
+import { addPostActionCreator } from "../../../../redux/main-reducer";
 import Posts from './Posts';
 import { connect } from 'react-redux';
 

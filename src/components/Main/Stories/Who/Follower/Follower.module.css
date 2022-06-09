@@ -36,3 +36,8 @@
     border: none;
     outline: none;
 }
+.btn:hover {
+    transition: all 0.3s;
+    color: #fcfcfc;
+    background: #0e58ac;
+}

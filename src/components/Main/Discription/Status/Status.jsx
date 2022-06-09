@@ -29,6 +29,7 @@ const Status = (props) => {
         }
     }*/
     return (
+
         <div className={s.statusblock}>
             <span onClick={activateEditMode} className={s.status}>Status: {props.status} </span>
             {editMode ? <input onChange={statusUpdate} onBlur={deactivateEditMode} type="text" className={s.statusinput} value={status} /> : ""}

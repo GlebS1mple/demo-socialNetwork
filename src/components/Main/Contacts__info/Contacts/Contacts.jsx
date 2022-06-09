@@ -4,12 +4,13 @@ import Contact from './Contact/Contact';
 
 
 const Contacts = (props) => {
-    let contacts = props.contacts.map((contact) => <Contact name={contact.name} id={contact.id} srcimg={contact.srcimg} />)
+    let contacts = props.contacts.map((contact) => <Contact key={contact.id} name={contact.name} id={contact.id} srcimg={contact.srcimg} />)
     return (
-        <div className={s.main}>
+        <div className={s.contactsmain}>
             <div className={s.heading}>Online Contacts</div>
-            {contacts}
-        </div>)
+            <div className={s.main}>
+                {contacts}
+            </div></div>)
 }
 
 export default Contacts;

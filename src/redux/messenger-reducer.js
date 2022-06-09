@@ -10,10 +10,10 @@ let initialState = {
         { id: 4, message: "Second" },
     ],
     chats: [
-        { id: 1, name: "Gleb", srcimg: "1.png" },
-        { id: 2, name: "Ivan", srcimg: "2.png" },
-        { id: 3, name: "Julia", srcimg: "3.png" },
-        { id: 4, name: "Lena", srcimg: "4.png" },
+        { id: 1, name: "Gleb", srcimg: "1.jpg" },
+        { id: 2, name: "Julia", srcimg: "2.jpg" },
+        { id: 3, name: "Ivan", srcimg: "3.jpg" },
+        { id: 4, name: "Nadzieja", srcimg: "4.jpg" },
     ],
 
 }

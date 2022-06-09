@@ -2,15 +2,15 @@ import React from "react";
 import s from "../Event/Event.module.css";
 
 const Event = (props) => {
-    let src = "../img/Events" + props.srcimg;
-    let srcsmall = "../img/Groups" + props.srcimg;
+    const src = "https://glebs1mple.github.io/demo-socialNetwork/img/Events" + props.srcimg;
+    const srcsmall = "https://glebs1mple.github.io/demo-socialNetwork/img/Groups" + props.srcimg;
     return (
         <div className={s.main}>
             <div className={s.block}>
                 <img src={src} alt="" className={s.bigimg} />
                 <div className={s.flexblock}>
                     <div className={s.opening}>
-                        <img src="../img/corn.png" alt="" className={s.icon} />
+                        <img src="https://glebs1mple.github.io/demo-socialNetwork/img/corn.png" alt="" className={s.icon} />
                         <div className={s.heading}>{props.name}</div>
                     </div>
                     <div className={s.discription}>{props.text}</div>

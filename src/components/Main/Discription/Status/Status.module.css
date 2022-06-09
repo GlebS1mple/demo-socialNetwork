@@ -1,11 +1,17 @@
 .status {
     font-size: 20px;
     line-height: 28px;
-    margin-left: 220px;
+    margin-left: 240px;
+    margin-right: 10px;
 }
 .statusinput {
     margin-left: 10px;
 }
 .statusblock {
     display: flex;
+}
+@media (max-width: 900px) {
+    .status {
+        margin-left: 15px;
+    }
 }

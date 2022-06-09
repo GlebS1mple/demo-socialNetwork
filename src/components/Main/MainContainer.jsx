@@ -7,9 +7,8 @@ import {
     useNavigate,
     useParams
 } from "react-router-dom";
-import { WithAuthRedirect } from "../../hoc/withAuth";
 import { compose } from "redux";
-
+//import { WithAuthRedirect } from "../../hoc/withAuth";
 
 
 
@@ -19,10 +18,11 @@ class MainContainer extends React.Component {
     refreshMain() {
         let userId = this.props.router.params.userId;
         if (!userId) {
-            userId = this.props.authorizedUserId;
+            userId = 22528;
+            /*userId = this.props.authorizedUserId;
             if (!userId) {
                 this.props.history.push("/Login")
-            }
+            }*/
         }
 
         this.props.getUserProfile(userId);
@@ -79,9 +79,8 @@ function withRouter(Component) {
 export default compose(
     connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveMain }),
     withRouter,
-    WithAuthRedirect
 )(MainContainer);
-
+//WithAuthRedirect
 /*let AuthRedirectComponent = WithAuthRedirect(MainContainer);
 
 let WithRouterUrlComponent = withRouter(AuthRedirectComponent)

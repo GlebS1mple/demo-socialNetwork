@@ -3,7 +3,7 @@ import s from "../Who/Who.module.css";
 import Follower from './Follower/Follower';
 
 const Who = (props) => {
-    let whos = props.whos.map((who) => <Follower id={who.id} name={who.name} srcimg={who.srcimg} />)
+    let whos = props.whos.map((who) => <Follower key={who.id} id={who.id} name={who.name} srcimg={who.srcimg} />)
     return (
         <div className={s.main}>
             <h1 className={s.heading}>Who to Follow</h1>

@@ -4,10 +4,13 @@ import Event from './Event/Event';
 
 
 const Events = (props) => {
-    let events = props.events.map((event) => <Event name={event.name} text={event.text} btn={event.btn} friends={event.friends} what={event.what} srcimg={event.srcimg} />)
+    let events = props.events.map((event) => <Event key={event.id} name={event.name} text={event.text} btn={event.btn} friends={event.friends} what={event.what} srcimg={event.srcimg} />)
     return (
         <div className={s.main}>
-            {events}
+            <h1 className={s.heading}>Events</h1>
+            <div className={s.flex}>
+                {events}
+            </div>
         </div>)
 }
 

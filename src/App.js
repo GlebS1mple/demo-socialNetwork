@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import s from "./App.module.css";
 import React, { Suspense } from "react";
 import Sidebar from '../src/components/Sidebar/Sidebar.jsx';
 import { Route, Routes } from "react-router-dom";
@@ -41,12 +40,11 @@ class App extends React.Component {
       return <Preloader />
     }
     return (
-      <div>
-        <HeaderContainer />
-        <div className="flex">
-          <Sidebar />
+      <div className={s.maincontainer} >
+        <div className={s.container}>
+          <HeaderContainer />
           <Suspense fallback={<Preloader />}>
-            <Routes basename={process.env.PUBLIC_URL} >
+            <Routes basename={process.env.PUBLIC_URL}>
               <Route path='/Messenger/*' element={<MessengerContainer />} />
               <Route path="/Main/:userId" element={<MainContainer />} />
               <Route path="Main/" element={<MainContainer />} />
@@ -85,11 +83,11 @@ let mapStateToProps = (state) => {
 let AppContainer = compose(connect(mapStateToProps, { initializeApp }), withRouter)(App);
 
 let MainApp = () => {
-  return <HashRouter  >
+  return <HashRouter >
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </HashRouter>
+  </HashRouter >
 }
 //store={store} dispatch={store.dispatch.bind(store)}
 

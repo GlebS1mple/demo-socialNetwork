@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className={s.main}>
             Privacy  .  Terms  .  Advertising  .  Ad Choices  .  Cookies  .<br />
-            More  .  Facebook © 2020
+            More  .  Ezgame © 2020
         </div>)
 }
 

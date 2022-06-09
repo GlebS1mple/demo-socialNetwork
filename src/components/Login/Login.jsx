@@ -12,21 +12,27 @@ let maxLengthThunk30 = maxLengthThunk(30);
 
 const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
     return (
-        <form onSubmit={handleSubmit}>
-            {createField("Email", "email", [required, maxLengthThunk30], Input)}
-            {createField("Password", "password", [required, maxLengthThunk30], Input, { type: "password" })}
-            {createField(null, "rememberMe", [], Input, { type: "checkbox" })}
-
-            {captchaUrl && <img src={captchaUrl} />}
-            {captchaUrl && createField("Symbols from image", "captcha", [required], Input, {})}
-            {error && <div className={s.error}>
-                {error}
+        <div className={s.formblock}>
+            <div className={s.opening}>
+                <h1 className={s.heading}>Sign Up</h1>
+                <h2 className={s.subheading}>Get started absolutely free</h2>
             </div>
-            }
+            <form onSubmit={handleSubmit} className={s.mainform}>
+                {createField("Email", "email", [required, maxLengthThunk30], Input, "input input__login")}
+                {createField("Password", "password", [required, maxLengthThunk30], Input, "input input__password", { type: "password" })}
+                <div className={s.rememberblock}>
+                    {createField(null, "rememberMe", [], Input, "input input__remember", { type: "checkbox" })} <div className={s.remember}>Remember me</div>
+                </div>
+                {captchaUrl && <img src={captchaUrl} />}
+                {captchaUrl && createField("Symbols from image", "captcha", [required], Input, {})}
+                {error && <div className={s.error}>
+                    {error}
+                </div>
+                }
 
-            <button>Log in</button>
-        </form>
-
+                <button className={s.btn}>Log in</button>
+            </form>
+        </div>
     )
 }
 const LoginFormForRedux = reduxForm({
@@ -41,7 +47,6 @@ const Login = (props) => {
     }
     return (
         <div className="s">
-            <h1>Login</h1>
             <LoginFormForRedux onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
         </div>
     )

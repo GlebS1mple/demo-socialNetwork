@@ -1,13 +1,9 @@
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 1rem;
-    margin-top: 1rem;
-}
 .user {
     display: flex;
-    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 2rem;
+    margin: 0px 15px 0px 15px;
 }
 .actions {
     display: flex;
@@ -16,22 +12,48 @@
     margin-right: 1rem;
 }
 .userphoto {
+    width: 60px;
+    height: 60px;
     margin-bottom: 0.6rem;
+    border-radius: 35px;
 }
 .follow {
     border-radius: 6px;
     background-color: #878f9c;
+    box-sizing: border-box;
     padding: 0.5rem;
     opacity: 0.7;
     border: none;
     color: white;
     transition: background-color, padding 0.3s ease;
     cursor: pointer;
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    width: 100%;
+    min-width: 60px;
 }
-.follow:hover {
+.unfollow {
+    border-radius: 6px;
+    background-color: #878f9c;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    opacity: 0.7;
+    border: none;
+    color: white;
+    transition: background-color, padding 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    left: -35px;
+    width: 100%;
+    min-width: 70px;
+}
+.follow:hover,
+.unfollow:hover {
     transition: all 0.3s ease;
     background-color: black;
-    padding: 0.7rem;
+    padding: 0.6rem;
     cursor: pointer;
 }
 .about {
@@ -43,6 +65,7 @@
     box-sizing: border-box;
     padding: 0.7rem;
     justify-content: space-between;
+    min-height: 6rem;
 }
 .firstblock {
     color: #878f9c;
@@ -62,7 +85,27 @@
     font-size: 1.5rem;
     line-height: 2rem;
 }
-.userphoto {
-    width: 60px;
-    height: 60px;
+
+.followblock {
+    position: relative;
+}
+.followblock:hover {
+    z-index: 2;
+}
+@media (max-width: 900px) {
+    .about {
+        min-width: 200px;
+        margin: 0px 10px 0px 0px;
+    }
+    .actions {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 500px) {
+    .name {
+        font-size: 1rem;
+    }
+    .actions {
+        margin-right: 0.5rem;
+    }
 }

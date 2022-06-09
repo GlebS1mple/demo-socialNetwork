@@ -11,3 +11,8 @@
     line-height: 21px;
     color: #203758;
 }
+@media (max-width: 800px) {
+    .main {
+        margin-left: 15px;
+    }
+}

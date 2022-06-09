@@ -15,25 +15,33 @@ const Discription = (props) => {
             props.savePhoto(e.target.files[0]);
         }
     }
+    const src = "https://glebs1mple.github.io/demo-socialNetwork/img/";
+
     return (
         <div className={s.main}>
             <div className={s.imgblock}>
-                <img src="../img/back.jpg" alt="background" className={s.background} />
-                {props.isOwner && <button className={s.editbtn} onClick={props.goToEditMode}>Edit</button>}
-                {props.isOwner && <input type="file" className={s.change} onChange={mainPhotoSelected} />}
+                <img src={src + "back.jpg"} alt="background" className={s.background} />
+                {props.isOwner && <button className={s.editbtn} onClick={props.goToEditMode}><img src={src + "edit.png"} className={s.editimg} alt="" /></button>}
+                {props.isOwner &&
+                    <div className={s.change}>
+                        <label htmlFor="file" className={s.uploadblock}><img src={src + "upload.png"} alt="" className={s.upload} /></label>
+                        <input type="file" id="file" className={s.file} onChange={mainPhotoSelected} />
+                    </div>}
                 <div className={s.name}>{props.profile.fullName}</div>
             </div>
             <div className={/*props.profile.aboutMe || props.profile.lookingForAJob ? s.discriptionfree :*/ s.discription}>
-                <img src={props.profile.photos.large ? props.profile.photos.large : "../img/user.jpg"} alt="" className={s.photo} />
-                <Status status={props.status} statusUpdate={props.updateStatus} />
-                {props.profile.lookingForAJob ? <div className={s.job}>Work: {props.profile.lookingForAJobDescription}</div> : ""}
+                <img src={props.profile.photos.large ? props.profile.photos.large : src + "user.jpg"} alt="" className={s.photo} />
+                <div className={s.info}>
+                    <Status isOwner={props.isOwner} status={props.status} statusUpdate={props.updateStatus} />
+                    {props.profile.lookingForAJob ? <div className={s.job}>Work: {props.profile.lookingForAJobDescription}</div> : ""}
+                </div>
                 <ul className={s.links}>
-                    <li><a href={props.profile.contacts.facebook} className=""><img src="../img/facebook.png" alt="" className={s.icon} /></a></li>
-                    <li><a href={props.profile.contacts.vk} className=""><img src="../img/vk.png" alt="" className={s.icon} /></a></li>
-                    <li><a href={props.profile.contacts.twitter} className=""><img src="../img/twitter.png" alt="" className={s.icon} /></a></li>
-                    <li><a href={props.profile.contacts.instagram} className=""><img src="../img/instagram.png" alt="" className={s.icon} /></a></li>
-                    <li><a href={props.profile.contacts.youtube} className=""><img src="../img/youtube.png" alt="" className={s.icon} /></a></li>
-                    <li><a href={props.profile.contacts.github} className=""><img src="../img/github.png" alt="" className={s.icon} /></a></li>
+                    <li className={s.link}><a href={props.profile.contacts.facebook} ><img src={src + "facebook.png"} alt="" className={s.icon} /></a></li>
+                    <li className={s.link}><a href={props.profile.contacts.vk} ><img src={src + "vk.png"} alt="" className={s.icon} /></a></li>
+                    <li className={s.link}><a href={props.profile.contacts.twitter} ><img src={src + "twitter.png"} alt="" className={s.icon} /></a></li>
+                    <li className={s.link}><a href={props.profile.contacts.instagram} ><img src={src + "instagram.png"} alt="" className={s.icon} /></a></li>
+                    <li className={s.link}><a href={props.profile.contacts.youtube} ><img src={src + "youtube.png"} alt="" className={s.icon} /></a></li>
+                    <li className={s.link}><a href={props.profile.contacts.github} ><img src={src + "github.png"} alt="" className={s.icon} /></a></li>
                 </ul>
             </div>
         </div>

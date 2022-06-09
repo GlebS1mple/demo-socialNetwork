@@ -22,10 +22,10 @@ export const Textarea = (props) => {
 }
 export const Input = (props) => {
     const { input, meta, child, ...restProps } = props;
-    return <FormControl {...props} ><input {...input} {...restProps} /></FormControl>
+    return <FormControl {...props} ><input  {...input} {...restProps} /></FormControl>
 }
-export const createField = (placeholder, name, validate, component, props) => {
-    return <Field component={component} name={name} placeholder={placeholder} validate={validate} {...props}></Field>
+export const createField = (placeholder, name, validate, component, className, props) => {
+    return <Field component={component} name={name} placeholder={placeholder} validate={validate} className={className}  {...props}></Field>
 }
 
 export default Textarea;

@@ -20,15 +20,15 @@ const Main = React.memo((props) => {
     }
     return (
         <div className={s.m}>
-
-
             <Discription goToEditMode={() => { setEditMode(true) }} savePhoto={props.savePhoto} isOwner={props.isOwner} profile={props.profile} status={props.status} savePhoto={props.savePhoto} updateStatus={props.updateStatus} />
             {editMode ?
                 <MainFormForRedux initialValues={props.profile} profile={props.profile} onSubmit={onSubmit} /> : ""}
             <div className={s.main}>
                 <Contacts__info profile={props.profile} contacts={props.contacts} />
-                <Posts__heading profile={props.profile} store={props.store} />
-                <Stories profile={props.profile} events={props.events} walls={props.walls} whos={props.whos} />
+                <div className={s.postsflex}>
+                    <Posts__heading profile={props.profile} store={props.store} />
+                    <Stories profile={props.profile} events={props.events} walls={props.walls} whos={props.whos} />
+                </div>
             </div>
         </div>
     )

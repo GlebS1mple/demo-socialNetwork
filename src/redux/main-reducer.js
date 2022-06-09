@@ -22,7 +22,7 @@ let initialState = {
     posts: [
         { id: 1, message: "Being a father is sometimes my hardest but always my most rewarding job. Happy Father’s Day to all dads out there. ", name: "Thomas Ben", lastseen: "45 mins ago", likes: 22, comments: 5, shares: 7, srcimg: "1.png" },
         { id: 2, message: "Having fun while cooking and eating variety of foods with @Sarah", name: "Miranda Shaffer", lastseen: "June 21, 12:45 pm", likes: 12, comments: 1, shares: 4, srcimg: "2.png" },
-        { id: 3, message: "Hi, I am Ivan - professional footbal player", name: "David Cox", lastseen: "5 mins ago", likes: 10, comments: 2, shares: 3, srcimg: "3.png" },
+        { id: 3, message: "Hi, I am Ivan - professional footbal player", name: "Ivan Polk", lastseen: "5 mins ago", likes: 10, comments: 2, shares: 3, srcimg: "3.jpg" },
     ],
     newPostText: '',
     events: [
@@ -40,7 +40,7 @@ let initialState = {
     ],
     profile: null,
     status: "",
-
+    login: null
 };
 
 const mainReducer = (state = initialState, action) => {

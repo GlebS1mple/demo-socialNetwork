@@ -11,9 +11,7 @@ const Posts__heading = (props) => {
         return <Preloader />
     }
     return (
-
         <div className={s.main}>
-
             <Heading profile={props.profile} />
             <PostsContainer store={props.store} />
         </div>)

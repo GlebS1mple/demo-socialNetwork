@@ -1,0 +1,125 @@
+.form {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+}
+.form::before {
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: -10px;
+    border-bottom: 2px solid #e5e5e5;
+}
+input[name="fullName"],
+input[name="lookingForAJob"],
+input[name="contacts.facebook"],
+input[name="contacts.website"],
+input[name="contacts.vk"],
+input[name="contacts.twitter"],
+input[name="contacts.instagram"],
+input[name="contacts.youtube"],
+input[name="contacts.github"],
+input[name="contacts.mainLink"],
+textarea[name="lookingForAJobDescription"],
+textarea[name="aboutMe"] {
+    font-family: "Montserrat";
+    min-height: 15px;
+    outline: none;
+    border: 1px solid #cacaca;
+    box-shadow: 2px 4px 6px rgba(79, 79, 79, 0.15);
+    border-radius: 2px;
+    resize: none;
+    width: 100%;
+    min-width: 500px;
+    padding: 0.5rem;
+}
+.heading {
+    margin-bottom: 10px;
+}
+.save {
+    width: 200px;
+    background: #f0f7ff;
+    color: #1877f2;
+    border: 1px solid #cccccc;
+    box-shadow: 2px 4px 6px rgba(79, 79, 79, 0.15);
+    border-radius: 15px;
+    font-family: "Gilroy-Medium";
+    font-size: 15px;
+    line-height: 18px;
+    padding: 8px 0 8px 0;
+    margin-bottom: 10px;
+}
+.save:hover {
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #fcfcfc;
+    background: #0e58ac;
+}
+@media (max-width: 650px) {
+    input[name="fullName"],
+    input[name="lookingForAJob"],
+    input[name="contacts.facebook"],
+    input[name="contacts.website"],
+    input[name="contacts.vk"],
+    input[name="contacts.twitter"],
+    input[name="contacts.instagram"],
+    input[name="contacts.youtube"],
+    input[name="contacts.github"],
+    input[name="contacts.mainLink"],
+    textarea[name="lookingForAJobDescription"],
+    textarea[name="aboutMe"] {
+        min-width: 400px;
+    }
+}
+@media (max-width: 550px) {
+    input[name="fullName"],
+    input[name="lookingForAJob"],
+    input[name="contacts.facebook"],
+    input[name="contacts.website"],
+    input[name="contacts.vk"],
+    input[name="contacts.twitter"],
+    input[name="contacts.instagram"],
+    input[name="contacts.youtube"],
+    input[name="contacts.github"],
+    input[name="contacts.mainLink"],
+    textarea[name="lookingForAJobDescription"],
+    textarea[name="aboutMe"] {
+        min-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 450px) {
+    input[name="fullName"],
+    input[name="lookingForAJob"],
+    input[name="contacts.facebook"],
+    input[name="contacts.website"],
+    input[name="contacts.vk"],
+    input[name="contacts.twitter"],
+    input[name="contacts.instagram"],
+    input[name="contacts.youtube"],
+    input[name="contacts.github"],
+    input[name="contacts.mainLink"],
+    textarea[name="lookingForAJobDescription"],
+    textarea[name="aboutMe"] {
+        min-width: 250px;
+    }
+}
+@media (max-width: 350px) {
+    input[name="fullName"],
+    input[name="lookingForAJob"],
+    input[name="contacts.facebook"],
+    input[name="contacts.website"],
+    input[name="contacts.vk"],
+    input[name="contacts.twitter"],
+    input[name="contacts.instagram"],
+    input[name="contacts.youtube"],
+    input[name="contacts.github"],
+    input[name="contacts.mainLink"],
+    textarea[name="lookingForAJobDescription"],
+    textarea[name="aboutMe"] {
+        min-width: 200px;
+    }
+}

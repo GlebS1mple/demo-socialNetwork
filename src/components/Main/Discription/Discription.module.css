@@ -1,5 +1,6 @@
 .main {
     font-family: Montserrat;
+    background-color: white;
 }
 
 .background {
@@ -9,17 +10,21 @@
     filter: brightness(45%);
     position: relative;
 }
+
+.link:not(:last-child) {
+    margin-right: 10px;
+}
 .icon {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    margin-right: 10px;
 }
 .discription,
 .discriptionfree {
     display: flex;
     position: relative;
-    height: 40px;
+    height: 100%;
+    min-height: 40px;
     align-items: center;
 }
 .discription {
@@ -51,6 +56,8 @@
 }
 .links {
     display: flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0px 0px 0px 0px;
@@ -62,8 +69,91 @@
     color: white;
     border: none;
 }
+.file {
+    margin: 0px 0px 0px 0px;
+    width: 1px;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
 .editbtn {
     position: absolute;
-    top: 50px;
+    top: 70px;
     left: 15px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.editimg:hover,
+.upload:hover {
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(1.1);
+}
+.editimg {
+    width: 40px;
+    height: 40px;
+}
+.uploadblock {
+    cursor: pointer;
+}
+.upload {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+}
+.info {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.job {
+    margin-right: 40px;
+}
+@media (max-width: 900px) {
+    .photo {
+        bottom: 90px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 0);
+    }
+    .job {
+        margin-right: 0;
+        margin-left: 15px;
+    }
+    .info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .name {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 38px;
+        line-height: 52px;
+        position: static;
+        color: black;
+    }
+}
+@media (max-width: 500px) {
+    .discription {
+        flex-direction: column;
+    }
+    .background {
+        height: 250px;
+    }
+    .photo {
+        bottom: 150%;
+    }
+    .info {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .links {
+        margin-bottom: 20px;
+    }
 }

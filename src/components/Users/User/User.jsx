@@ -7,16 +7,16 @@ const User = ({ user, followingInProgress, follow, unfollow }) => {
         <div className={s.user} >
             <div className={s.actions}>
                 <NavLink to={"/Main/" + user.id}>
-                    <img src={user.photos.small != null ? user.photos.small : "../img/Follower1.png"} alt="" className={s.userphoto} />
+                    <img src={user.photos.small != null ? user.photos.small : "https://glebs1mple.github.io/demo-socialNetwork/img/user.png"} alt="" className={s.userphoto} />
                 </NavLink>
                 {user.followed
-                    ? <button disabled={followingInProgress.some(id => id === user.id)} className={s.follow} onClick={() => {
+                    ? <div className={s.followblock}><button disabled={followingInProgress.some(id => id === user.id)} className={s.unfollow} onClick={() => {
                         unfollow(user.id);
-                    }}>Unfollow</button>
-                    : <button disabled={followingInProgress.some(id => id === user.id)} className={s.follow}
+                    }}>Unfollow</button></div>
+                    : <div className={s.followblock}> <button disabled={followingInProgress.some(id => id === user.id)} className={s.follow}
                         onClick={() => {
                             follow(user.id);
-                        }}>Follow</button>
+                        }}>Follow</button></div>
                 }
             </div>
             <div className={s.about}>
@@ -25,8 +25,8 @@ const User = ({ user, followingInProgress, follow, unfollow }) => {
                     <div className={s.status}>{user.status}</div>
                 </div>
                 <div className={s.secondblock}>
-                    <div className={s.country}>{"user.location.country"}</div>
-                    <div className={s.city}>{"user.location.city"}</div>
+                    <div className={s.country}>{"Country"}</div>
+                    <div className={s.city}>{"City"}</div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import s from "../Preloader/Preloader.module.css"
 let Preloader = () => {
     return (
         <div className={s.preloaderblock}>
-            <img src="../img/Spinner-1s-200px.svg" alt="" />
+            <img src="https://glebs1mple.github.io/demo-socialNetwork/img/Spinner-1s-200px.svg" alt="" />
         </div>
     )
 }
