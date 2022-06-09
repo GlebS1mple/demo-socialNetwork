@@ -1,8 +1,0 @@
-.error input,
-.error textarea {
-    border: 2px solid rgb(196, 60, 60);
-}
-.error {
-    color: rgb(196, 60, 60);
-    padding-bottom: 10px;
-}
